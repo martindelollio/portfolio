@@ -1,12 +1,22 @@
 <div>
-    <!-- <button [routerLink]="/solicitud">Crear Solicitud de proyecto</button> -->
+  <button routerLink="/solicitud">
+    Crear solicitud de proyecto
+  </button>
 
-    <!-- @for (s of solicitudes(); track s.id) {
-        <div>
-            <h3>{{ s.nombre }}</h3>
-            <p>{{ s.descripcion }}</p>
-        </div>
-    } @empty {
-        <h3>No hay solicitudes cargadas</h3> 
-        } -->
+  @for (s of solicitudes(); track s.id) {
+    <div>
+      <h3>{{ s.nombre }}</h3>
+      <p>{{ s.descripcion }}</p>
+
+      <button [routerLink]="['/solicitudes', s.id]">
+        Ver solicitud
+      </button>
+
+      <button [routerLink]="['/solicitud', s.id, 'edit']">
+        Editar solicitud
+      </button>
+    </div>
+  } @empty {
+    <h3>No hay solicitudes cargadas</h3>
+  }
 </div>

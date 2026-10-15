@@ -66,4 +66,19 @@ export class Solicitud {
       })
     }
   }
+  deleteSolicitud(){
+    if (!this.id) return;
+
+  if (!confirm("¿Estás seguro de eliminar esta solicitud?")) {
+    return;
+  }
+      this.sService.deleteSolicitud(this.id).subscribe({
+        next: () => {console.log("Solicitud eliminada",
+          this.router.navigate(['/list-solicitud'])
+        )},
+        error: (e) => {
+      console.log("Error al eliminar solicitud:", e);
+        }
+      })
+    }
 }

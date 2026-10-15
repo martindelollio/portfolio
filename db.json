@@ -28,12 +28,12 @@
   "solicitudes": [
     {
       "nombre": "martin",
-      "email": "martindelolli@gmail.com",
-      "tipoProyecto": "infra estructura",
-      "descripcion": "servidor dedicado",
-      "presupuesto": 500000,
-      "fechaAproximada": "2027-10-19",
-      "id": "5xBcvPHJWkw"
+      "email": "martindelollio@gmail.com",
+      "tipoProyecto": "infraestructura",
+      "descripcion": "ashei",
+      "presupuesto": 50000,
+      "fechaAproximada": "2026-10-19",
+      "id": "ffnT9V7nZQY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
