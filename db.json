@@ -1,27 +1,40 @@
-{"proyectos":[
+{
+  "proyectos": [
     {
-        "id": "1",
-        "nombre": "BotFCG",
-        "descripcionCorta": "Asistente de whatsapp y festor de grupos",
-        "descripcion": "",
-        "tecnologias utilizadas": "Nodejs y javascript",
-        "imagen":"" 
+      "id": "1",
+      "nombre": "FCGBot",
+      "descripcionCorta": "Asistente de WhatsApp y gestor de grupos",
+      "descripcion": "Bot de manejo de grupos, con comandos personalizados, ia interactiva integrada con generacion de audio y APIs a pedidos de mis amigos de uso diario",
+      "tecnologias": "Node.js y JavaScript",
+      "imagen": ""
     },
     {
-        "id": "2",
-        "nombre": "appointmee-whatsapp-gateway",
-        "descripcionCorta": "WhatsApp Gateway — Servicio de mensajería automatizada",
-        "descripcion": "Gateway de mensajería desarrollado con Node.js y Baileys, diseñado para integrar el envío automatizado de mensajes de WhatsApp con aplicaciones externas mediante una API REST. Permite enviar códigos de verificación y notificaciones, desacoplando la lógica de mensajería del backend principal. Su arquitectura modular facilita el mantenimiento, la escalabilidad y la futura integración con proveedores oficiales de mensajería.",
-        "tecnologias utilizadas": "Nodejs y javascript",
-        "imagen":"" 
+      "id": "2",
+      "nombre": "Appointmee-whatsapp-gateway",
+      "descripcionCorta": "Servicio de mensajería automatizada",
+      "descripcion": "Gateway desarrollado con Node.js y Baileys para integrar WhatsApp con aplicaciones externas mediante una API REST.",
+      "tecnologias": "Node.js, JavaScript y Baileys",
+      "imagen": ""
+    },
+    {
+      "id": "3",
+      "nombre": "AppointMee",
+      "descripcionCorta": "Aplicación Full Stack para la gestión y reserva de turnos",
+      "descripcion": "Sistema de gestión de turnos para clientes y prestadores de servicios.",
+      "tecnologias": "Angular, TypeScript, Java, Spring Boot y MySQL",
+      "imagen": ""
     }
-    ,{
-        "id": "3",
-        "nombre": "Appointmee",
-        "descripcionCorta": "plicación web Full Stack diseñada para facilitar la gestión y reserva de turnos entre clientes y prestadores de servicios.Permite administrar sucursales, empleados, servicios y disponibilidad horaria, ofreciendo un sistema de reservas con validaciones, cancelaciones y seguimiento de estados.Desarrollada con una arquitectura modular, integra notificaciones automatizadas y validación de usuarios mediante WhatsApp, priorizando la escalabilidad, la seguridad y una experiencia de usuario intuitiva.",
-        "descripcion": "",
-        "tecnologias utilizadas": "Angular, TypeScript, Java, Spring Boot y MySQL",
-        "imagen":"" 
+  ],
+  "solicitudes": [
+    {
+      "nombre": "martin",
+      "email": "martindelolli@gmail.com",
+      "tipoProyecto": "infra estructura",
+      "descripcion": "servidor dedicado",
+      "presupuesto": 500000,
+      "fechaAproximada": "2027-10-19",
+      "id": "5xBcvPHJWkw"
     }
-]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -11,6 +11,7 @@ import Proyecto from '../../models/proyectos';
 })
 export class Projects {
   proyectos = signal<Proyecto[]>([]);
+
   
   constructor(public pService : ProyectoService){
 
@@ -20,7 +21,7 @@ export class Projects {
   }
   loadProjects(){
     this.pService.getProjects().subscribe({
-      next: (data) => {this.pService.proyectos = data},
+      next: (data) => {this.proyectos.set(data)},
       error: (e) => console.log(e)
 
     })

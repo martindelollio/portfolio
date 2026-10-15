@@ -9,10 +9,7 @@ import Proyecto from '../models/proyectos';
 export class ProyectoService {
  private api = "http://localhost:3000/proyectos"
 
- proyectos : Proyecto[]
-
  constructor(public http: HttpClient){
-    this.proyectos =[]
  }
 
  getProjects(){

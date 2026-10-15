@@ -1,1 +1,58 @@
-<p>solicitud works!</p>
+@if (id){
+    <h1>Editar Solicitud</h1>
+}
+@else{
+    <h1>Crear Solicitud</h1>
+}
+
+<form (submit)="$event.preventDefault(); onSubmit()">
+    <div>
+        <label for="nombre">nombre</label>
+        <input type="text"id="nombre" [formField]="solicitudForm.nombre">
+
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error">El nombre es obligatorio</p>
+        }
+        
+        <label for="Email">Email</label>
+        <input type="email" id="email" [formField]="solicitudForm.email">
+
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error">El email es obligatorio</p>
+        }
+        <label for="TipoProyecto">Tipo de Proyecto</label>
+        <input type="text" id="tipoProyecto" [formField]="solicitudForm.tipoProyecto">
+
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error"> Este campo es obligatorio</p>
+        }
+        
+        <label for="descripcion">Descripcion</label>
+        <input type="text" id="descripcion" [formField]="solicitudForm.descripcion">
+
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error"> La descripcion es obligatoria</p>
+        }
+        <label for="presupuesto">Presupuesto</label>
+        <input type="number" id="presupuesto" [formField]="solicitudForm.presupuesto">
+
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error"> El presupuesto es obligatorio</p>
+        }
+        <label for="fecha">Fecha aproximada</label>
+        <input type="date" id="fecha" [formField]="solicitudForm.fechaAproximada">
+        @if(solicitudForm().touched() && solicitudForm().getError('required')){
+            <p class="error"> La fecha aproximada es obligatoria</p>
+        }
+
+    </div>
+    <br>
+    <button type="submit">
+        @if (id) {
+            Enviar Solicitud
+        }
+        @else{
+            Guardar Cambios
+        }
+    </button>
+</form>
