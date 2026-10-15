@@ -1,1 +1,22 @@
-<p>solicitud-details works!</p>
+@if (solicitud(); as s) {
+  <div>
+    <h1>Detalle de solicitud</h1>
+
+    <h3>Nombre: {{ s.nombre }}</h3>
+    <p>Email: {{ s.email }}</p>
+    <p>Tipo de proyecto: {{ s.tipoProyecto }}</p>
+    <p>Descripción: {{ s.descripcion }}</p>
+    <p>Presupuesto: {{ s.presupuesto }}</p>
+    <p>Fecha aproximada: {{ s.fechaAproximada }}</p>
+
+    <button [routerLink]="['/solicitud', s.id, 'edit']">
+      Editar solicitud
+    </button>
+    
+    <button routerLink="/list-solicitud">
+      Volver
+    </button>
+  </div>
+} @else {
+  <p>Cargando solicitud...</p>
+}
