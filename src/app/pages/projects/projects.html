@@ -1,0 +1,19 @@
+<div>
+    <ul>
+        @if(proyectos.length === 0)
+    {
+        <h3>No hay proyectos disponibles</h3>
+    }@else {
+        @for (p of pService.proyectos; track $index){
+            <li>
+                <a [routerLink]="p.nombre">
+                    <h3>{{p.descripcion}}</h3>
+                    <h3>{{p.tecnologias}}</h3>
+                </a>
+            </li>
+
+        }
+    }
+        
+    </ul>
+</div>
