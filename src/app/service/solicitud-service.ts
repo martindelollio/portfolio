@@ -22,7 +22,7 @@ export class SolicitudService {
         return this.http.delete<solicitud>(`${this.api}/${id}`)
     }
     editSolicitud(id: string, soli :solicitud){
-        return this,this.http.put<solicitud>(`${this.api}/${id}`, soli)
+        return this.http.put<solicitud>(`${this.api}/${id}`, soli)
     }
 
 }

@@ -42,9 +42,106 @@
       <p>Completá los datos para continuar.</p>
     </div>
 
-    <!-- Conservá acá tu formulario actual,
-         incluyendo [formField], validaciones
-         y (ngSubmit)="onSubmit()" -->
+   
+<form (submit)="$event.preventDefault(); onSubmit()">
+
+  <div class="form-group">
+    <label for="nombre">Nombre completo</label>
+    <input
+      id="nombre"
+      type="text"
+      placeholder="Tu nombre"
+      [formField]="solicitudForm.nombre"
+    >
+
+    @if (solicitudForm.nombre().touched() && solicitudForm.nombre().invalid()) {
+      <small>Ingresá tu nombre.</small>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="email">Correo electrónico</label>
+    <input
+      id="email"
+      type="email"
+      placeholder="correo@ejemplo.com"
+      [formField]="solicitudForm.email"
+    >
+
+    @if (solicitudForm.email().touched() && solicitudForm.email().invalid()) {
+      <small>Ingresá un email válido.</small>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="tipoProyecto">Tipo de proyecto</label>
+    <select
+      id="tipoProyecto"
+      [formField]="solicitudForm.tipoProyecto"
+    >
+      <option value="">Seleccioná una opción</option>
+      <option value="Web">Aplicación web</option>
+      <option value="Movil">Aplicación móvil</option>
+      <option value="Escritorio">Aplicación de escritorio</option>
+      <option value="Otro">Otro</option>
+    </select>
+
+    @if (solicitudForm.tipoProyecto().touched() && solicitudForm.tipoProyecto().invalid()) {
+      <small>Seleccioná un tipo de proyecto.</small>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="descripcion">Descripción</label>
+    <textarea
+      id="descripcion"
+      rows="5"
+      placeholder="Contame qué necesitás desarrollar..."
+      [formField]="solicitudForm.descripcion"
+    ></textarea>
+
+    @if (solicitudForm.descripcion().touched() && solicitudForm.descripcion().invalid()) {
+      <small>Ingresá una descripción.</small>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="presupuesto">Presupuesto estimado ($)</label>
+    <input
+      id="presupuesto"
+      type="number"
+      [formField]="solicitudForm.presupuesto"
+    >
+
+    @if (solicitudForm.presupuesto().touched() && solicitudForm.presupuesto().invalid()) {
+      <small>El presupuesto mínimo es $50.000.</small>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="fechaAproximada">Fecha aproximada</label>
+    <input
+      id="fechaAproximada"
+      type="date"
+      [formField]="solicitudForm.fechaAproximada"
+    >
+
+    @if (solicitudForm.fechaAproximada().touched() && solicitudForm.fechaAproximada().invalid()) {
+      <small>Seleccioná una fecha.</small>
+    }
+  </div>
+
+  <button type="submit">
+    {{ id ? 'Guardar cambios' : 'Enviar solicitud' }}
+  </button>
+
+  <button
+     routerLink="/projects" class="btn-back">
+        ← Volver a proyectos
+  </button>
+
+</form>
+
   </div>
 
 </section>
