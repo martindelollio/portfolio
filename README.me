@@ -1,0 +1,129 @@
+# Portfolio Personal — Martín Del Ollio
+
+Portfolio web desarrollado con **Angular 22** como Trabajo Práctico de Programación IV de la **Tecnicatura Universitaria en Programación — UTN Facultad Regional Mar del Plata**.
+
+La aplicación permite presentar mis conocimientos y proyectos de desarrollo de software, además de administrar solicitudes de nuevos proyectos.
+
+## Tecnologías utilizadas
+
+- **Angular 22** — Framework frontend.
+- **TypeScript** — Lenguaje de programación.
+- **HTML5 y CSS3** — Estructura y estilos.
+- **Angular Signals** — Manejo de estado reactivo.
+- **Angular Forms** — Formularios y validaciones.
+- **Angular Router** — Navegación entre páginas.
+- **HttpClient** — Comunicación con la API REST.
+- **JSON Server** — API REST simulada y persistencia de datos.
+- **CSS Grid y Flexbox** — Diseño responsive.
+
+## Funcionalidades
+
+### Inicio
+
+Página de presentación personal con información sobre mi formación académica, conocimientos técnicos y herramientas utilizadas.
+
+### Proyectos
+
+- Listado dinámico de proyectos obtenidos mediante HTTP.
+- Tarjetas con nombre, descripción y tecnologías.
+- Navegación al detalle de cada proyecto mediante su identificador.
+- Visualización de información completa e imágenes.
+
+### Solicitudes de proyectos
+
+- Creación de solicitudes mediante un formulario con validaciones.
+- Listado de solicitudes registradas.
+- Consulta de detalles de una solicitud.
+- Edición de solicitudes existentes.
+- Eliminación de solicitudes con confirmación.
+
+Las operaciones de creación, consulta, actualización y eliminación se realizan mediante peticiones HTTP a JSON Server.
+
+## Requisitos previos
+
+Para ejecutar el proyecto es necesario tener instalados:
+
+- Node.js
+- npm
+- Git
+
+## Instalación
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/martindelollio/portfolio.git
+cd portfolio
+```
+
+### 2. Instalar las dependencias
+
+```bash
+npm install
+```
+
+### 3. Iniciar JSON Server
+
+En una terminal, ejecutar:
+
+```bash
+npx json-server db.json --port 3000
+```
+
+La API REST estará disponible en:
+
+```text
+http://localhost:3000
+```
+
+Los datos se almacenan en el archivo `db.json`.
+
+### 4. Iniciar Angular
+
+En otra terminal, ejecutar:
+
+```bash
+npm start
+```
+
+Abrir la aplicación en el navegador:
+
+```text
+http://localhost:4200
+```
+
+**Importante:** Angular y JSON Server deben estar ejecutándose simultáneamente para utilizar las funcionalidades que requieren datos.
+
+## Endpoints de la API
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| GET | `/proyectos` | Obtener todos los proyectos |
+| GET | `/proyectos/:id` | Obtener un proyecto |
+| GET | `/solicitudes` | Obtener todas las solicitudes |
+| GET | `/solicitudes/:id` | Obtener una solicitud |
+| POST | `/solicitudes` | Crear una solicitud |
+| PUT | `/solicitudes/:id` | Actualizar una solicitud |
+| DELETE | `/solicitudes/:id` | Eliminar una solicitud |
+
+Los endpoints dependen de los nombres de las colecciones definidos en `db.json`.
+
+## Diseño
+
+El portfolio utiliza una interfaz oscura con detalles en verde lima y tipografía Nunito.
+
+El diseño es adaptable a diferentes tamaños de pantalla mediante CSS Grid, Flexbox y media queries.
+
+## Autor
+
+**Martín Del Ollio**
+
+Estudiante de la Tecnicatura Universitaria en Programación.
+
+**Universidad:** UTN — Facultad Regional Mar del Plata.
+
+**GitHub:** https://github.com/martindelollio
+
+---
+
+Proyecto académico desarrollado para Programación IV — 2026.

@@ -13,6 +13,6 @@ export const routes: Routes = [
     {path: "projects/:id", component:ProjectsDatails},
     {path: "list-solicitud", component:ListaSolicitudes},
     {path: "solicitud", component: Solicitud},
-    {path: "solicitud/:id/:edit", component: Solicitud},
+    {path: "solicitud/:id/edit", component: Solicitud},
     {path: "solicitudes/:id", component: SolicitudDetails},
 ];

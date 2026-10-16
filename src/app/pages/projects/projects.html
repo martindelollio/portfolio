@@ -1,19 +1,56 @@
-<div>
-    <ul>
-     
-        @for (p of proyectos(); track $index){
-            <li>
-                <h1>{{p.nombre}}</h1>
-                <h3>{{p.descripcion}}</h3>
-                <h3>{{p.tecnologias}}</h3>
-                <button [routerLink]="['/projects',  p.id]">Ver Proyecto</button>
 
-            </li>
+<section class="projects-page">
 
-        }@empty{
-            <h3>No hay proyectos disponibles.</h3>
-        }
+  <header class="projects-heading">
+    <span class="eyebrow">MI TRABAJO / PORTFOLIO</span>
+    <h1>Mis proyectos<span>.</span></h1>
+    <p>
+      Una selección de aplicaciones, herramientas y
+      soluciones que desarrollé.
+    </p>
+  </header>
 
-        
-    </ul>
-</div>
+  <div class="projects-grid">
+    @for (p of proyectos(); track p.id) {
+      <article class="project-card">
+
+        <div class="project-image">
+          @if (p.imagen) {
+            <img [src]="p.imagen" [alt]="p.nombre">
+          } @else {
+            <span class="image-placeholder">PROYECTO</span>
+          }
+        </div>
+
+        <div class="project-content">
+          <span class="project-number">
+            PROYECTO / {{ p.id }}
+          </span>
+
+          <h2>{{ p.nombre }}</h2>
+
+          <p class="project-description">
+            {{ p.descripcionCorta }}
+          </p>
+
+          <div class="project-footer">
+            <span class="project-tech">
+              {{ p.tecnologias }}
+            </span>
+
+            <a [routerLink]="['/projects', p.id]"
+               class="project-link">
+              Ver detalle <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+      </article>
+    } @empty {
+      <p class="empty-state">
+        Todavía no hay proyectos disponibles.
+      </p>
+    }
+  </div>
+
+</section>

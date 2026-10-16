@@ -6,7 +6,7 @@
       "descripcionCorta": "Asistente de WhatsApp y gestor de grupos",
       "descripcion": "Bot de manejo de grupos, con comandos personalizados, ia interactiva integrada con generacion de audio y APIs a pedidos de mis amigos de uso diario",
       "tecnologias": "Node.js y JavaScript",
-      "imagen": ""
+      "imagen": "projects/FCGBot.jpg"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "descripcionCorta": "Servicio de mensajería automatizada",
       "descripcion": "Gateway desarrollado con Node.js y Baileys para integrar WhatsApp con aplicaciones externas mediante una API REST.",
       "tecnologias": "Node.js, JavaScript y Baileys",
-      "imagen": ""
+      "imagen": "projects/Appointmee-whatsapp-gateway.png"
     },
     {
       "id": "3",
@@ -22,19 +22,9 @@
       "descripcionCorta": "Aplicación Full Stack para la gestión y reserva de turnos",
       "descripcion": "Sistema de gestión de turnos para clientes y prestadores de servicios.",
       "tecnologias": "Angular, TypeScript, Java, Spring Boot y MySQL",
-      "imagen": ""
+      "imagen": "projects/appointmee.jpg"
     }
   ],
-  "solicitudes": [
-    {
-      "nombre": "martin",
-      "email": "martindelollio@gmail.com",
-      "tipoProyecto": "infraestructura",
-      "descripcion": "ashei",
-      "presupuesto": 50000,
-      "fechaAproximada": "2026-10-19",
-      "id": "ffnT9V7nZQY"
-    }
-  ],
+  "solicitudes": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

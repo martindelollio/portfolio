@@ -1,0 +1,229 @@
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.solicitudes-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0 6rem;
+}
+
+/* ENCABEZADO */
+
+.solicitudes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: block;
+  color: #b9f45c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.solicitudes-header h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+}
+
+.solicitudes-header h1 span {
+  color: #b9f45c;
+}
+
+.solicitudes-header p {
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+/* BOTÓN NUEVA SOLICITUD */
+
+.btn-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.5rem;
+  background: #b9f45c;
+  color: #101113;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.btn-new:hover {
+  background: #d0ff86;
+  transform: translateY(-3px);
+}
+
+/* GRILLA */
+
+.solicitudes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* TARJETAS */
+
+.solicitud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem;
+  background: #1d1e21;
+  border: 1px solid #333438;
+  border-radius: 18px;
+  transition: 0.25s ease;
+}
+
+.solicitud-card:hover {
+  border-color: #b9f45c;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* PARTE SUPERIOR */
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #303b27;
+  color: #b9f45c;
+  font-size: 1.5rem;
+}
+
+.card-id {
+  color: #85858e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* CONTENIDO */
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.card-content p {
+  color: #a1a1aa;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* PIE DE TARJETA */
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #333438;
+}
+
+.card-type {
+  color: #a1a1aa;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.card-link {
+  color: #b9f45c;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ESTADOS */
+
+.status-message {
+  text-align: center;
+  padding: 4rem 0;
+  color: #a1a1aa;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #1d1e21;
+  border: 1px dashed #44464b;
+  border-radius: 18px;
+}
+
+.empty-state > span {
+  display: block;
+  font-size: 2.5rem;
+  color: #b9f45c;
+  margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #a1a1aa;
+  margin-bottom: 1.5rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .solicitudes-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .solicitudes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solicitud-card {
+    padding: 1.5rem;
+  }
+
+  .solicitudes-header {
+    align-items: flex-start;
+  }
+}

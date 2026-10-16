@@ -1,0 +1,189 @@
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.projects-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0 6rem;
+}
+
+/* ENCABEZADO */
+
+.projects-heading {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: block;
+  color: #b9f45c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.projects-heading h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+}
+
+.projects-heading h1 span {
+  color: #b9f45c;
+}
+
+.projects-heading p {
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+/* GRILLA */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* TARJETAS */
+
+.project-card {
+  background: #1d1e21;
+  border: 1px solid #333438;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #b9f45c;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* IMAGEN */
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #292d31;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  color: #b9f45c;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+/* CONTENIDO */
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+}
+
+.project-number {
+  color: #b9f45c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.project-content h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.project-description {
+  color: #a1a1aa;
+  font-size: 1rem;
+  line-height: 1.7;
+  min-height: 3.4rem;
+}
+
+/* PIE DE TARJETA */
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid #333438;
+}
+
+.project-tech {
+  color: #a1a1aa;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.project-link {
+  color: #b9f45c;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.2s ease;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.project-link span {
+  margin-left: 0.3rem;
+}
+
+.empty-state {
+  color: #a1a1aa;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-content {
+    padding: 1.25rem;
+  }
+
+  .project-description {
+    min-height: auto;
+  }
+}

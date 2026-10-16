@@ -1,22 +1,79 @@
-<div>
-  <button routerLink="/solicitud">
-    Crear solicitud de proyecto
-  </button>
 
-  @for (s of solicitudes(); track s.id) {
+<section class="solicitudes-page">
+
+  <header class="solicitudes-header">
     <div>
-      <h3>{{ s.nombre }}</h3>
-      <p>{{ s.descripcion }}</p>
+      <span class="eyebrow">GESTIÓN / SOLICITUDES</span>
 
-      <button [routerLink]="['/solicitudes', s.id]">
-        Ver solicitud
-      </button>
+      <h1>Solicitudes<span>.</span></h1>
 
-      <button [routerLink]="['/solicitud', s.id, 'edit']">
-        Editar solicitud
-      </button>
+      <p>
+        Consultá las solicitudes de proyectos recibidas.
+      </p>
     </div>
-  } @empty {
-    <h3>No hay solicitudes cargadas</h3>
+
+    <a routerLink="/solicitud" class="btn-new">
+      + Nueva solicitud
+    </a>
+  </header>
+
+  @if (loading()) {
+    <div class="status-message">
+      Cargando solicitudes...
+    </div>
+  } @else {
+
+    <div class="solicitudes-grid">
+
+      @for (s of solicitudes(); track s.id) {
+
+        <article class="solicitud-card">
+
+          <div class="card-top">
+            <div class="card-icon">✉</div>
+
+            <span class="card-id">
+              SOLICITUD #{{ s.id }}
+            </span>
+          </div>
+
+          <div class="card-content">
+            <h2>{{ s.nombre }}</h2>
+
+            <p>{{ s.descripcion }}</p>
+          </div>
+
+          <div class="card-footer">
+            <span class="card-type">
+              {{ s.tipoProyecto }}
+            </span>
+
+            <a
+              [routerLink]="['/solicitudes', s.id]"
+              class="card-link">
+              Ver detalle ↗
+            </a>
+          </div>
+
+        </article>
+
+      } @empty {
+
+        <div class="empty-state">
+          <span>✉</span>
+          <h2>No hay solicitudes todavía</h2>
+          <p>
+            Creá una solicitud para comenzar.
+          </p>
+
+          <a routerLink="/solicitud" class="btn-new">
+            Crear solicitud
+          </a>
+        </div>
+
+      }
+
+    </div>
   }
-</div>
+
+</section>

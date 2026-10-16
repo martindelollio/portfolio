@@ -1,22 +1,91 @@
-@if (solicitud(); as s) {
-  <div>
-    <h1>Detalle de solicitud</h1>
 
-    <h3>Nombre: {{ s.nombre }}</h3>
-    <p>Email: {{ s.email }}</p>
-    <p>Tipo de proyecto: {{ s.tipoProyecto }}</p>
-    <p>Descripción: {{ s.descripcion }}</p>
-    <p>Presupuesto: {{ s.presupuesto }}</p>
-    <p>Fecha aproximada: {{ s.fechaAproximada }}</p>
+<section class="detail-page">
 
-    <button [routerLink]="['/solicitud', s.id, 'edit']">
-      Editar solicitud
-    </button>
-    
-    <button routerLink="/list-solicitud">
-      Volver
-    </button>
-  </div>
-} @else {
-  <p>Cargando solicitud...</p>
-}
+  <header class="detail-heading">
+    <span class="eyebrow">GESTIÓN / DETALLE</span>
+    <h1>Detalle de solicitud<span>.</span></h1>
+    <p>Información completa del proyecto solicitado.</p>
+  </header>
+
+  @if (solicitud(); as s) {
+
+    <article class="detail-card">
+
+      <div class="client-header">
+        <div class="client-icon">✉</div>
+
+        <div class="client-info">
+          <h2>{{ s.nombre }}</h2>
+          <p>{{ s.email }}</p>
+        </div>
+
+        <span class="request-id">
+          #{{ s.id }}
+        </span>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="details-grid">
+
+        <div class="detail-field">
+          <span class="field-label">TIPO DE PROYECTO</span>
+          <p>{{ s.tipoProyecto }}</p>
+        </div>
+
+        <div class="detail-field">
+          <span class="field-label">PRESUPUESTO ESTIMADO</span>
+          <p>
+            {{ s.presupuesto }}
+          </p>
+        </div>
+
+        <div class="detail-field">
+          <span class="field-label">FECHA APROXIMADA</span>
+          <p>{{ s.fechaAproximada }}</p>
+        </div>
+
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="description-section">
+        <span class="field-label">DESCRIPCIÓN DEL PROYECTO</span>
+        <p>{{ s.descripcion }}</p>
+      </div>
+
+    </article>
+
+    <div class="detail-actions">
+
+      <a routerLink="/list-solicitud" class="btn-back">
+        ← Volver
+      </a>
+
+      <div class="actions-right">
+
+        <button
+          type="button"
+          class="btn-delete"
+          (click)="deleteSolicitud()">
+          Eliminar
+        </button>
+
+        <a
+          [routerLink]="['/solicitud', s.id, 'edit']"
+          class="btn-edit">
+          Editar solicitud ↗
+        </a>
+
+      </div>
+    </div>
+
+  } @else {
+
+    <div class="detail-loading">
+      Cargando solicitud...
+    </div>
+
+  }
+
+</section>

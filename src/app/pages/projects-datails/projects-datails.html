@@ -1,14 +1,61 @@
-<div>
-    @if(proyecto(); as p){
-        <div>
-            <h1>{{p.nombre}}</h1>
-            <h3>{{p.descripcion}}</h3>
-            <h3>{{p.tecnologias}}</h3>
-            <h3>{{p.imagen}}</h3>
-        </div>
 
-    }@else{
-        <h3>Cargando proyecto...</h3>
-    }
-    <button routerLink="/projects">Volver</button>
-</div>
+<section class="project-detail-page">
+
+  @if (proyecto(); as p) {
+
+    <header class="project-heading">
+      <span class="eyebrow">PORTFOLIO / PROYECTO #{{ p.id }}</span>
+
+      <h1>{{ p.nombre }}<span>.</span></h1>
+
+      <p>{{ p.descripcionCorta }}</p>
+    </header>
+
+    <div class="project-cover">
+      @if (p.imagen) {
+        <img [src]="p.imagen" [alt]="p.nombre">
+      } @else {
+        <div class="cover-placeholder">
+          <span>PROYECTO / {{ p.id }}</span>
+          <h2>{{ p.nombre }}</h2>
+        </div>
+      }
+    </div>
+
+    <div class="project-info-grid">
+
+      <article class="info-card">
+        <span class="eyebrow">SOBRE EL PROYECTO</span>
+        <h2>¿De qué trata?</h2>
+
+        <p>{{ p.descripcion }}</p>
+      </article>
+
+      <article class="info-card">
+        <span class="eyebrow">STACK TECNOLÓGICO</span>
+        <h2>Tecnologías utilizadas</h2>
+
+        <div class="tech-container">
+          <span class="tech-tag">
+            {{ p.tecnologias }}
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="project-actions">
+      <a routerLink="/projects" class="btn-back">
+        ← Volver a proyectos
+      </a>
+    </div>
+
+  } @else {
+
+    <div class="loading-state">
+      Cargando proyecto...
+    </div>
+
+  }
+
+</section>

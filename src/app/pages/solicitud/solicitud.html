@@ -1,64 +1,50 @@
-@if (id){
-    <h1>Editar Solicitud</h1>
-}
-@else{
-    <h1>Crear Solicitud</h1>
-}
+<section class="solicitud-page">
 
-<form (submit)="$event.preventDefault(); onSubmit()">
-    <div>
-        <label for="nombre">nombre</label>
-        <input type="text"id="nombre" [formField]="solicitudForm.nombre">
+  <div class="solicitud-info">
+    <span class="eyebrow">TRABAJEMOS JUNTOS</span>
 
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error">El nombre es obligatorio</p>
-        }
-        
-        <label for="Email">Email</label>
-        <input type="email" id="email" [formField]="solicitudForm.email">
+    <h1>
+      ¿Tenés una idea?
+      <span>Hagámosla realidad.</span>
+    </h1>
 
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error">El email es obligatorio</p>
-        }
-        <label for="TipoProyecto">Tipo de Proyecto</label>
-        <input type="text" id="tipoProyecto" [formField]="solicitudForm.tipoProyecto">
+    <p>
+      Contame sobre tu proyecto, qué necesitás y
+      cuál es tu presupuesto estimado.
+    </p>
 
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error"> Este campo es obligatorio</p>
-        }
-        
-        <label for="descripcion">Descripcion</label>
-        <input type="text" id="descripcion" [formField]="solicitudForm.descripcion">
+    <div class="info-list">
+      <div class="info-item">
+        <span class="info-icon">✓</span>
+        <span>Desarrollo personalizado</span>
+      </div>
 
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error"> La descripcion es obligatoria</p>
-        }
-        <label for="presupuesto">Presupuesto</label>
-        <input type="number" id="presupuesto" [formField]="solicitudForm.presupuesto">
+      <div class="info-item">
+        <span class="info-icon">✓</span>
+        <span>Soluciones adaptadas a cada proyecto</span>
+      </div>
 
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error"> El presupuesto es obligatorio</p>
-        }
-        <label for="fecha">Fecha aproximada</label>
-        <input type="date" id="fecha" [formField]="solicitudForm.fechaAproximada">
-        @if(solicitudForm().touched() && solicitudForm().getError('required')){
-            <p class="error"> La fecha aproximada es obligatoria</p>
-        }
-
+      <div class="info-item">
+        <span class="info-icon">✓</span>
+        <span>Comunicación durante el desarrollo</span>
+      </div>
     </div>
-    <br>
-    <button type="submit">
-        @if (id) {
-            Enviar Solicitud
-        }
-        @else{
-            Guardar Cambios
-        }
-    </button>
-    @if(id){
-      <button (click)="deleteSolicitud()">Eliminar Solicitud</button>
-    }
-    <button routerLink="/list-solicitud">
-      Volver
-    </button>
-</form>
+  </div>
+
+  <div class="form-card">
+    <div class="form-header">
+      <span class="eyebrow">FORMULARIO</span>
+
+      <h2>
+        {{ id ? 'Editar solicitud' : 'Nuevo proyecto' }}
+      </h2>
+
+      <p>Completá los datos para continuar.</p>
+    </div>
+
+    <!-- Conservá acá tu formulario actual,
+         incluyendo [formField], validaciones
+         y (ngSubmit)="onSubmit()" -->
+  </div>
+
+</section>
